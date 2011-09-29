@@ -1,0 +1,6 @@
+escape ^]v
+
+startup_message off
+
+hardstatus on
+hardstatus alwayslastline "screen | %w"
