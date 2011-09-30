@@ -1,5 +1,12 @@
 set nocompatible
 
+filetype off
+
+set rtp+=~/.vim/vundle.git/ 
+call vundle#rc()
+
+filetype plugin indent on
+
 syntax on
 
 set whichwrap=b,s,h,l,<,>
