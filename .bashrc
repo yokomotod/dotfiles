@@ -98,7 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-LANG=ja_JP.UTF-8
+LANG=en_US.UTF-8
+# LANG=ja_JP.UTF-8
 PATH=$HOME/bin:$PATH
 source ~/perl5/perlbrew/etc/bashrc
 
@@ -106,3 +107,4 @@ source ~/perl5/perlbrew/etc/bashrc
 if [ -f /bin/zsh ]; then
     exec /bin/zsh
 fi
+
