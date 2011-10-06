@@ -103,8 +103,3 @@ LANG=en_US.UTF-8
 PATH=$HOME/bin:$PATH
 source ~/perl5/perlbrew/etc/bashrc
 
-# use zsh
-if [ -f /bin/zsh ]; then
-    exec /bin/zsh
-fi
-

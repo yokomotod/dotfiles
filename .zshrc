@@ -44,3 +44,13 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+
+LANG=en_US.UTF-8
+# LANG=ja_JP.UTF-8
+
+export PATH=$HOME/bin:$PATH
+source ~/perl5/perlbrew/etc/bashrc
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+source ~/.rbenv/completions/rbenv.zsh
