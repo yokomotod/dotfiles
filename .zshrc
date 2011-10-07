@@ -53,8 +53,8 @@ if [ -f ~/perl5/perlbrew ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 if [ -f ~/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
     source ~/.rbenv/completions/rbenv.zsh
 fi
