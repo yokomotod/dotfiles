@@ -49,11 +49,11 @@ LANG=en_US.UTF-8
 # LANG=ja_JP.UTF-8
 
 export PATH=$HOME/bin:$PATH
-if [ -f ~/perl5/perlbrew ]; then
+if [ -s ~/perl5/perlbrew ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
 
-if [ -f ~/.rbenv ]; then
+if [ -s ~/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
     source ~/.rbenv/completions/rbenv.zsh
