@@ -10,15 +10,29 @@
 ;; enable visual feedback on selections
 (setq-default transient-mark-mode t)
 
-;;対応する括弧をハイライト表示させる
+;; hilight parens
 (if (fboundp 'show-paren-mode)
     (show-paren-mode 1))
 
+;; number backup files
+;; auto delete excess
+(setq make-backup-files t)
+(setq version-control t)
+(setq delete-old-versions t)
+
+;; make backup files in ~/.emacs.d/backup
+(setq backup-directory-alist
+      (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
+	    backup-directory-alist))
+
+(global-set-key "\C-x\C-s"  (lambda ()
+			      (interactive)
+			      (save-buffer 16)))
 ;; don't make backup files
-(setq backup-inhibited t)
+;; (setq backup-inhibited t)
 
 ;; delete auto save files when exit
-(setq delete-auto-save-files t)
+;; (setq delete-auto-save-files t)
 
 (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key "\C-j" 'newline)
