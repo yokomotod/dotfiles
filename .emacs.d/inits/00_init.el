@@ -25,17 +25,14 @@
       (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
 	    backup-directory-alist))
 
-(global-set-key "\C-x\C-s"  (lambda ()
-			      (interactive)
-			      (save-buffer 16)))
 ;; don't make backup files
 ;; (setq backup-inhibited t)
 
 ;; delete auto save files when exit
 ;; (setq delete-auto-save-files t)
 
-(global-set-key "\C-m" 'newline-and-indent)
-(global-set-key "\C-j" 'newline)
+;; enable auto revert mode
+(global-auto-revert-mode t)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
