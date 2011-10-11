@@ -1,3 +1,5 @@
+autodetach on
+
 escape ^]v
 
 startup_message off

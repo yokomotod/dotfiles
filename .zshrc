@@ -58,3 +58,7 @@ if [ -s ~/.rbenv ]; then
     eval "$(rbenv init -)"
     source ~/.rbenv/completions/rbenv.zsh
 fi
+
+# auto attach screen
+[ ${STY} ] || screen -rx || screen -D -RR
+
