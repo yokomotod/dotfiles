@@ -21,8 +21,10 @@
 ;; (define-key ac-complete-mode-map "\t" 'ac-complete)
 ;; (define-key ac-complete-mode-map "\r" nil)
 
-(global-set-key "\C-xb" 'anything-for-files)
+;; (global-set-key "\C-xb" 'anything-for-files)
 ;; (global-set-key "\C-xb" 'anything-filelist+)
+(global-set-key "\C-xb" 'anything-filelist++)
+
 (global-set-key (kbd "M-y") 'anything-show-kill-ring)
 
 (global-set-key (kbd "M-s") 'anything-c-moccur-occur-by-moccur)

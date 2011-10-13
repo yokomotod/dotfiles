@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: open
+# --
+open my \$fh, '<:utf8', ${1:<input_file>};
+while (<\$fh>) {
+    chomp;
+    my (${2:<hoge, fuga>}) = split /${3:<\\t>}/;
+    $0
+}
+close \$fh;
