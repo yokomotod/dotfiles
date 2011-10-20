@@ -31,7 +31,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
+# zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
@@ -48,7 +48,10 @@ alias l='ls -CF'
 LANG=en_US.UTF-8
 # LANG=ja_JP.UTF-8
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/myroot/usr/local/bin:$PATH
+export INCLUDE=$HOME/myroot/usr/local/include
+export CPLUS_INCLUDE_PATH=$HOME/myroot/usr/local/include
+
 if [ -s ~/perl5/perlbrew ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
