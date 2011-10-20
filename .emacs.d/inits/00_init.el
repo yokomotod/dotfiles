@@ -18,7 +18,9 @@
 ;; auto delete excess
 (setq make-backup-files t)
 (setq version-control t)
-(setq delete-old-versions t)
+(setq kept-new-versions 600000)
+(setq kept-old-versions 600000)
+;; (setq delete-old-versions t)
 
 ;; make backup files in ~/.emacs.d/backup
 (setq backup-directory-alist

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ruby make-filelist.rb > all.filelist.tmp
+ruby ~/.emacs.d/make-filelist.rb > ~/.emacs.d/all.filelist.tmp
 
-mv all.filelist.tmp all.filelist
+mv ~/.emacs.d/all.filelist.tmp ~/.emacs.d/all.filelist
 
