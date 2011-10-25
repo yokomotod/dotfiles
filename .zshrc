@@ -52,6 +52,10 @@ export PATH=$HOME/bin:$HOME/myroot/usr/local/bin:$PATH
 export INCLUDE=$HOME/myroot/usr/local/include
 export CPLUS_INCLUDE_PATH=$HOME/myroot/usr/local/include
 
+if [ -s ~/.zsh/auto-screen.zsh ]; then
+    source ~/.zsh/auto-screen.zsh
+fi
+
 if [ -s ~/perl5/perlbrew ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
@@ -62,6 +66,4 @@ if [ -s ~/.rbenv ]; then
     source ~/.rbenv/completions/rbenv.zsh
 fi
 
-# auto attach screen
-[ ${STY} ] || screen -rx || screen -D -RR
 
