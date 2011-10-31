@@ -45,6 +45,10 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+# turn off stop and start
+stty stop undef
+stty start undef
+
 LANG=en_US.UTF-8
 # LANG=ja_JP.UTF-8
 
