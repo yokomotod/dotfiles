@@ -56,6 +56,8 @@ export PATH=$HOME/bin:$HOME/myroot/usr/local/bin:$PATH
 export INCLUDE=$HOME/myroot/usr/local/include
 export CPLUS_INCLUDE_PATH=$HOME/myroot/usr/local/include
 
+export LD_LIBRARY_PATH=/home/yokomoto/myroot/usr/local/lib
+
 if [ -s ~/.zsh/auto-screen.zsh ]; then
     source ~/.zsh/auto-screen.zsh
 fi
