@@ -2,6 +2,9 @@
 ;; (server-start)
 
 ;;
+(set-language-environment "Japanese")
+
+;;
 (setq inhibit-startup-message t)
 
 ;; turn on font-lock mode
