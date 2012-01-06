@@ -73,3 +73,5 @@ if [ -s ~/.rbenv ]; then
 fi
 
 
+# for tex
+export BIBINPUTS=.:$HOME/tex/bib
