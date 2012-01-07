@@ -45,6 +45,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+############################################################################################
+
 # turn off stop and start
 stty stop undef
 stty start undef
