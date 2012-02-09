@@ -2,7 +2,7 @@
 ;; (server-start)
 
 ;;
-(set-language-environment "Japanese")
+;; (set-language-environment "Japanese")
 
 ;;
 (setq inhibit-startup-message t)
