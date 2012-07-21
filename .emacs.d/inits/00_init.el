@@ -10,6 +10,8 @@
 ;; turn on font-lock mode
 (global-font-lock-mode t)
 
+(global-set-key "\C-h" 'delete-backward-char)
+
 ;; enable visual feedback on selections
 (setq-default transient-mark-mode t)
 
