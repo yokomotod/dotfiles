@@ -90,7 +90,7 @@ fi
 setopt no_nomatch
 if [ -s ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
-    nvm use v0.6.10
+    nvm use v0.6.11
 fi
 
 # for tex
