@@ -1,0 +1,19 @@
+
+$ cd
+$ git clone git://github.com/yokomotod/dotfiles.git
+
+fetch submodules
+$ cd ~/dotfiles
+$ git submodule init
+$ git submodule update
+
+byte compile elisp
+$ cd ~/dotfiles/.emacs.d/
+$ ./batch-byte-compile.sh
+
+fetch vim plugins by Vundle
+$ vim
+:BundleInstall
+
+make symbolic links
+$ ln -s dotfiles/.emacs.d dotfiles/.screenrc dotfiles/.vim dotfiles/.vimrc dotfiles/.zshrc

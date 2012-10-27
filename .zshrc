@@ -26,7 +26,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+# eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -39,13 +39,26 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-alias ls='ls --color=auto'
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ls='ls --color=auto'
+# # some more ls aliases
+# alias ll='ls -l'
+# alias la='ls -A'
+# alias l='ls -CF'
 
 ############################################################################################
+
+case "$OSTYPE" in
+# BSD (contains Mac)
+darwin*)
+  alias ls='ls -G'
+  ;;
+# for GNU
+linux*)
+  alias ls='ls --color=auto'
+  ;;
+esac
+alias ll='ls -l'
+alias la='ls -a'
 
 # turn off stop and start
 stty stop undef
