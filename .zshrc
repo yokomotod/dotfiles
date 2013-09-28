@@ -81,7 +81,12 @@ if [ -s ~/perl5/perlbrew ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
 
-if [ -s ~/.rbenv ]; then
+if [ -s /usr/local/rbenv ]; then
+    export RBENV_ROOT="/usr/local/rbenv"
+    export PATH="/usr/local/rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    source /usr/local/rbenv/completions/rbenv.zsh
+elif [ -s ~/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
     source ~/.rbenv/completions/rbenv.zsh
