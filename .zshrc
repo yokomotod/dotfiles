@@ -100,3 +100,6 @@ fi
 
 # for tex
 export BIBINPUTS=.:$HOME/tex/bib
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
