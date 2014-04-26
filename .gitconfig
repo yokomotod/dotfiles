@@ -1,7 +1,13 @@
 [user]
-	name = Daisuke Yokomoto
+	name = yokomotod
 	email = yokomotod@gmail.com
 [color]
 	ui = auto
 [alias]
 	co = checkout
+	ci = commit
+	st = status
+	br = branch
+[core]
+	excludesfile = /Users/yokomoto/.gitignore_global
+	editor = vim
