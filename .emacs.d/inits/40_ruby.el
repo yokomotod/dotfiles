@@ -10,8 +10,9 @@
 ;;               (set-face-foreground font-lock-keyword-face "blue")
 ;;               (set-face-foreground font-lock-type-face "dark green")))
 (autoload 'ruby-mode "ruby-mode" "ruby script coding mode" t)
-(setq auto-mode-alist
-      (nconc '(("\\.rb" . ruby-mode)) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.rb" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ruby-electric.el
