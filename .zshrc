@@ -92,7 +92,6 @@ elif [ -s ~/.rbenv ]; then
     source ~/.rbenv/completions/rbenv.zsh
 fi
 
-setopt no_nomatch
 if [ -s ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
     nvm use v0.6.11
@@ -100,6 +99,9 @@ fi
 
 # for tex
 export BIBINPUTS=.:$HOME/tex/bib
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
