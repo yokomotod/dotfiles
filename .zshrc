@@ -73,6 +73,11 @@ export CPLUS_INCLUDE_PATH=$HOME/myroot/usr/local/include
 
 export LD_LIBRARY_PATH=/home/yokomoto/myroot/usr/local/lib
 
+if [ -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]; then
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+  export EDITOR='subl -w'
+fi
+
 if [ -s ~/.zsh/auto-screen.zsh ]; then
     source ~/.zsh/auto-screen.zsh
 fi
