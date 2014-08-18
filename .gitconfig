@@ -14,5 +14,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pager]
+	diff = diff-highlight | less -R
+	log  = diff-highlight | less -R
+	show = diff-highlight | less -R
 [include]
 	path = .gitconfig.local
