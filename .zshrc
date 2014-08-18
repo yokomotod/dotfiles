@@ -79,28 +79,35 @@ if [ -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]; then
 fi
 
 if [ -s ~/.zsh/auto-screen.zsh ]; then
-    source ~/.zsh/auto-screen.zsh
+  source ~/.zsh/auto-screen.zsh
 fi
 
+# perlbrew
 if [ -s ~/perl5/perlbrew ]; then
-    source ~/perl5/perlbrew/etc/bashrc
+  source ~/perl5/perlbrew/etc/bashrc
 fi
 
+# rbenv
 if [ -s /usr/local/rbenv ]; then
-    export RBENV_ROOT="/usr/local/rbenv"
-    export PATH="/usr/local/rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-    source /usr/local/rbenv/completions/rbenv.zsh
+  export RBENV_ROOT="/usr/local/rbenv"
+  export PATH="/usr/local/rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  source /usr/local/rbenv/completions/rbenv.zsh
 elif [ -s ~/.rbenv ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-    source ~/.rbenv/completions/rbenv.zsh
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  source ~/.rbenv/completions/rbenv.zsh
 fi
 
+# nvm
 if [ -s ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
-    nvm use v0.6.11
+  source ~/.nvm/nvm.sh
+  nvm use v0.6.11
 fi
+
+# gvm
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"
 
 # for tex
 export BIBINPUTS=.:$HOME/tex/bib
@@ -110,3 +117,40 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# for git status
+autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+
+function rprompt-git-current-branch {
+  local name st color gitdir action
+  if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then
+    return
+  fi
+  name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
+  if [[ -z $name ]]; then
+    return
+  fi
+
+  gitdir=`git rev-parse --git-dir 2> /dev/null`
+  action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+
+  st=`git status 2> /dev/null`
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    color=%F{green}
+  elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+    color=%F{yellow}
+  elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+    color=%B%F{red}
+  else
+    color=%F{red}
+  fi
+
+  echo "$color$name$action%f%b "
+}
+
+setopt prompt_subst
+
+RPROMPT='[`rprompt-git-current-branch`%~]'
+
+# local
+[[ -s "~/.zshrc.local" ]] && source ~/.zshrc.local
