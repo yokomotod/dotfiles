@@ -1,13 +1,10 @@
-[user]
-	name = yokomotod
-	email = yokomotod@gmail.com
 [color]
 	ui = auto
 [alias]
 	co = checkout
-	ci = commit
 	st = status
 	br = branch
+	aa = add --all
 [core]
 	excludesfile = /Users/yokomoto/.gitignore_global
 	editor = vim
@@ -17,3 +14,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[include]
+	path = .gitconfig.local
