@@ -152,5 +152,8 @@ setopt prompt_subst
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
+### Mac Mavericks ssh-agent issue
+export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
+
 # local
 [[ -s "~/.zshrc.local" ]] && source ~/.zshrc.local
