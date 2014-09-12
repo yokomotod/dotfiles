@@ -20,3 +20,5 @@
 	show = diff-highlight | less -R
 [include]
 	path = .gitconfig.local
+[push]
+	default = simple
