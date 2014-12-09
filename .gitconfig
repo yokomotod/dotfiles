@@ -8,6 +8,7 @@
 [core]
 	excludesfile = /Users/yokomoto/.gitignore_global
 	editor = vim
+	autocrlf = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
