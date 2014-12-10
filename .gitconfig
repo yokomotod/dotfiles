@@ -23,3 +23,5 @@
 	path = .gitconfig.local
 [push]
 	default = simple
+[pull]
+	ff = only
