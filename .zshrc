@@ -102,7 +102,6 @@ fi
 # nvm
 if [ -s ~/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
-  nvm use v0.6.11
 fi
 
 # gvm
