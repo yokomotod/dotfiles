@@ -22,6 +22,6 @@
 [include]
 	path = .gitconfig.local
 [push]
-	default = simple
+	default = current
 [pull]
 	ff = only
