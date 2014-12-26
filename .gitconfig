@@ -25,3 +25,5 @@
 	default = current
 [pull]
 	ff = only
+[init]
+	templatedir = ~/.gittemplate
