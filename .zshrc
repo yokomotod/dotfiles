@@ -83,9 +83,7 @@ if [ -s ~/.zsh/auto-screen.zsh ]; then
 fi
 
 # perlbrew
-if [ -s ~/perl5/perlbrew ]; then
-  source ~/perl5/perlbrew/etc/bashrc
-fi
+[[ -s "~/perl5/perlbrew" ]] && source ~/perl5/perlbrew/etc/bashrc
 
 # rbenv
 if [ -s /usr/local/rbenv ]; then
@@ -100,9 +98,7 @@ elif [ -s ~/.rbenv ]; then
 fi
 
 # nvm
-if [ -s ~/.nvm/nvm.sh ]; then
-  source ~/.nvm/nvm.sh
-fi
+[[ -s "~/.nvm/nvm.sh" ]] &&  source ~/.nvm/nvm.sh
 
 # gvm
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
