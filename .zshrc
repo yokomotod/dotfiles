@@ -78,12 +78,12 @@ if [ -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]; then
   export EDITOR='subl -w'
 fi
 
-if [ -s ~/.zsh/auto-screen.zsh ]; then
-  source ~/.zsh/auto-screen.zsh
+if [ -s $HOME/.zsh/auto-screen.zsh ]; then
+  source $HOME/.zsh/auto-screen.zsh
 fi
 
 # perlbrew
-[[ -s "~/perl5/perlbrew" ]] && source ~/perl5/perlbrew/etc/bashrc
+[[ -s "$HOME/perl5/perlbrew" ]] && source $HOME/perl5/perlbrew/etc/bashrc
 
 # rbenv
 if [ -s /usr/local/rbenv ]; then
@@ -91,18 +91,18 @@ if [ -s /usr/local/rbenv ]; then
   export PATH="/usr/local/rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   source /usr/local/rbenv/completions/rbenv.zsh
-elif [ -s ~/.rbenv ]; then
+elif [ -s $HOME/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-  source ~/.rbenv/completions/rbenv.zsh
+  source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
 # nvm
-[[ -s "~/.nvm/nvm.sh" ]] &&  source ~/.nvm/nvm.sh
+[[ -s "$HOME/.nvm/nvm.sh" ]] &&  source $HOME/.nvm/nvm.sh
 
 # gvm
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source ~/.gvm/bin/gvm-init.sh
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source $HOME/.gvm/bin/gvm-init.sh
 
 # for tex
 export BIBINPUTS=.:$HOME/tex/bib
@@ -151,4 +151,4 @@ RPROMPT='[`rprompt-git-current-branch`%~]'
 export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
 
 # local
-[[ -s "~/.zshrc.local" ]] && source ~/.zshrc.local
+[[ -s "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local

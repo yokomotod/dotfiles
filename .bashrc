@@ -120,7 +120,7 @@ LANG=en_US.UTF-8
 PATH=$HOME/bin:$PATH
 
 # perlbrew
-[[ -s "~/perl5/perlbrew" ]] && source ~/perl5/perlbrew/etc/bashrc
+[[ -s "$HOME/perl5/perlbrew" ]] && source $HOME/perl5/perlbrew/etc/bashrc
 
 # rbenv
 if [ -s /usr/local/rbenv ]; then
@@ -128,18 +128,18 @@ if [ -s /usr/local/rbenv ]; then
   export PATH="/usr/local/rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   source /usr/local/rbenv/completions/rbenv.bash
-elif [ -s ~/.rbenv ]; then
+elif [ -s $HOME/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-  source ~/.rbenv/completions/rbenv.bash
+  source $HOME/.rbenv/completions/rbenv.bash
 fi
 
 # nvm
-[[ -s "~/.nvm/nvm.sh" ]] &&  source ~/.nvm/nvm.sh
+[[ -s "$HOME/.nvm/nvm.sh" ]] &&  source $HOME/.nvm/nvm.sh
 
 # gvm
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source ~/.gvm/bin/gvm-init.sh
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source $HOME/.gvm/bin/gvm-init.sh
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
