@@ -5,6 +5,7 @@
 	st = status
 	br = branch
 	aa = add --all
+	graph = log --graph --oneline --decorate
 [core]
 	excludesfile = /Users/yokomoto/.gitignore_global
 	editor = vim
