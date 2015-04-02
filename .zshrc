@@ -1,154 +1,80 @@
-# Set up the prompt
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/daisuke.yokomoto/.oh-my-zsh
 
-autoload -Uz promptinit
-promptinit
-prompt walters
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=100000
-SAVEHIST=100000
-HISTFILE=~/.zsh_history
-setopt hist_ignore_dups
-setopt hist_reduce_blanks
-setopt extended_history
-setopt share_history
-function history-all { history -E 1 }
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-# eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-# zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# alias ls='ls --color=auto'
-# # some more ls aliases
-# alias ll='ls -l'
-# alias la='ls -A'
-# alias l='ls -CF'
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-############################################################################################
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-case "$OSTYPE" in
-# BSD (contains Mac)
-darwin*)
-  alias ls='ls -G'
-  ;;
-# for GNU
-linux*)
-  alias ls='ls --color=auto'
-  ;;
-esac
-alias ll='ls -l'
-alias la='ls -a'
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# turn off stop and start
-stty stop undef
-stty start undef
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
 
-LANG=en_US.UTF-8
-# LANG=ja_JP.UTF-8
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-export PATH=$HOME/bin:$HOME/myroot/usr/local/bin:$PATH
-export INCLUDE=$HOME/myroot/usr/local/include
-export CPLUS_INCLUDE_PATH=$HOME/myroot/usr/local/include
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-export LD_LIBRARY_PATH=/home/yokomoto/myroot/usr/local/lib
+# User configuration
 
-if [ -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]; then
-  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-  export EDITOR='subl -w'
-fi
+export PATH="/usr/local/heroku/bin:/Users/daisuke.yokomoto/.nodebrew/current/bin:/Users/daisuke.yokomoto/.gvm/vertx/current/bin:/Users/daisuke.yokomoto/.gvm/springboot/current/bin:/Users/daisuke.yokomoto/.gvm/lazybones/current/bin:/Users/daisuke.yokomoto/.gvm/jbake/current/bin:/Users/daisuke.yokomoto/.gvm/groovyserv/current/bin:/Users/daisuke.yokomoto/.gvm/groovy/current/bin:/Users/daisuke.yokomoto/.gvm/griffon/current/bin:/Users/daisuke.yokomoto/.gvm/grails/current/bin:/Users/daisuke.yokomoto/.gvm/gradle/current/bin:/Users/daisuke.yokomoto/.gvm/glide/current/bin:/Users/daisuke.yokomoto/.gvm/gaiden/current/bin:/Users/daisuke.yokomoto/.gvm/crash/current/bin:/Users/daisuke.yokomoto/.nvm/v0.10.33/bin:/Users/daisuke.yokomoto/.rbenv/shims:/Users/daisuke.yokomoto/.rbenv/bin:/Users/daisuke.yokomoto/bin:/Users/daisuke.yokomoto/myroot/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-if [ -s $HOME/.zsh/auto-screen.zsh ]; then
-  source $HOME/.zsh/auto-screen.zsh
-fi
+source $ZSH/oh-my-zsh.sh
 
-# perlbrew
-[[ -s "$HOME/perl5/perlbrew" ]] && source $HOME/perl5/perlbrew/etc/bashrc
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# rbenv
-if [ -s /usr/local/rbenv ]; then
-  export RBENV_ROOT="/usr/local/rbenv"
-  export PATH="/usr/local/rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-  source /usr/local/rbenv/completions/rbenv.zsh
-elif [ -s $HOME/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-  source $HOME/.rbenv/completions/rbenv.zsh
-fi
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] &&  source $HOME/.nvm/nvm.sh
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-# gvm
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source $HOME/.gvm/bin/gvm-init.sh
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# for tex
-export BIBINPUTS=.:$HOME/tex/bib
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# for git status
-autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
-
-function rprompt-git-current-branch {
-  local name st color gitdir action
-  if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then
-    return
-  fi
-  name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
-  if [[ -z $name ]]; then
-    return
-  fi
-
-  gitdir=`git rev-parse --git-dir 2> /dev/null`
-  action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
-
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    color=%F{green}
-  elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-    color=%F{yellow}
-  elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-    color=%B%F{red}
-  else
-    color=%F{red}
-  fi
-
-  echo "$color$name$action%f%b "
-}
-
-setopt prompt_subst
-
-RPROMPT='[`rprompt-git-current-branch`%~]'
-
-### Mac Mavericks ssh-agent issue
-export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
-
-# local
-[[ -s "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
