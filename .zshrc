@@ -49,13 +49,39 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/Users/daisuke.yokomoto/.nodebrew/current/bin:/Users/daisuke.yokomoto/.gvm/vertx/current/bin:/Users/daisuke.yokomoto/.gvm/springboot/current/bin:/Users/daisuke.yokomoto/.gvm/lazybones/current/bin:/Users/daisuke.yokomoto/.gvm/jbake/current/bin:/Users/daisuke.yokomoto/.gvm/groovyserv/current/bin:/Users/daisuke.yokomoto/.gvm/groovy/current/bin:/Users/daisuke.yokomoto/.gvm/griffon/current/bin:/Users/daisuke.yokomoto/.gvm/grails/current/bin:/Users/daisuke.yokomoto/.gvm/gradle/current/bin:/Users/daisuke.yokomoto/.gvm/glide/current/bin:/Users/daisuke.yokomoto/.gvm/gaiden/current/bin:/Users/daisuke.yokomoto/.gvm/crash/current/bin:/Users/daisuke.yokomoto/.nvm/v0.10.33/bin:/Users/daisuke.yokomoto/.rbenv/shims:/Users/daisuke.yokomoto/.rbenv/bin:/Users/daisuke.yokomoto/bin:/Users/daisuke.yokomoto/myroot/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+## perlbrew
+[[ -s "$HOME/perl5/perlbrew" ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
+## rbenv
+if [ -s $HOME/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  source $HOME/.rbenv/completions/rbenv.zsh
+fi
+
+## nvm
+[[ -s "$HOME/.nvm/nvm.sh" ]] &&  source $HOME/.nvm/nvm.sh
+
+## gvm
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source $HOME/.gvm/bin/gvm-init.sh
+
+## nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+## Mac Mavericks ssh-agent issue
+export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
+
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
