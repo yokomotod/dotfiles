@@ -2,7 +2,7 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle "thinca/vim-ref"

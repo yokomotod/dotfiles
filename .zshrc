@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -9,6 +9,10 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -49,39 +53,13 @@ plugins=(git)
 
 # User configuration
 
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-## perlbrew
-[[ -s "$HOME/perl5/perlbrew" ]] && source $HOME/perl5/perlbrew/etc/bashrc
-
-## rbenv
-if [ -s $HOME/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-  source $HOME/.rbenv/completions/rbenv.zsh
-fi
-
-## nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] &&  source $HOME/.nvm/nvm.sh
-
-## gvm
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source $HOME/.gvm/bin/gvm-init.sh
-
-## nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-## Mac Mavericks ssh-agent issue
-export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
-
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -104,3 +82,10 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Load all files from ~/zshrc.d
+if [ -d ~/zshrc.d ]; then
+  for file in ~/zshrc.d/*.zsh; do
+    source $file
+  done
+fi

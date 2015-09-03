@@ -7,15 +7,9 @@
 	aa = add --all
 	graph = log --graph --oneline --decorate
 [core]
-	excludesfile = /Users/yokomoto/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [pager]
 	diff = diff-highlight | less -R
 	log  = diff-highlight | less -R
