@@ -83,9 +83,9 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Load all files from ~/zshrc.d
-if [ -d ~/zshrc.d ]; then
-  for file in ~/zshrc.d/*.zsh; do
+# Load all files from ~/.zshrc.d
+if [ -d ~/.zshrc.d ]; then
+  for file in ~/.zshrc.d/*.zsh; do
     source $file
   done
 fi
