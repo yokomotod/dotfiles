@@ -1,2 +1,8 @@
-*~
+# OSX
 .DS_Store
+
+# Vim
+*~
+
+# JetBrains
+.idea/
