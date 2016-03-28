@@ -24,3 +24,5 @@
 	templatedir = ~/.gittemplate
 [fetch]
 	prune = true
+[diff]
+	renames = true
