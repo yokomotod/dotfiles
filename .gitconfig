@@ -26,3 +26,5 @@
 	prune = true
 [diff]
 	renames = true
+[stash]
+	showPatch = true
