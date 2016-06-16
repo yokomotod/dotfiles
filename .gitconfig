@@ -26,5 +26,6 @@
 	prune = true
 [diff]
 	renames = true
+	compactionHeuristic = true
 [stash]
 	showPatch = true
