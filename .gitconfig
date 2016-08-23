@@ -29,3 +29,5 @@
 	compactionHeuristic = true
 [stash]
 	showPatch = true
+[merge]
+	conflictstyle = diff3
