@@ -6,7 +6,6 @@
 	graph = log --graph --oneline --decorate --all
 [core]
 	ui = auto
-	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = false
 	ignorecase = false
