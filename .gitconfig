@@ -19,8 +19,6 @@
 	default = current
 [pull]
 	ff = only
-[init]
-	templatedir = ~/.gittemplate
 [fetch]
 	prune = true
 [diff]
