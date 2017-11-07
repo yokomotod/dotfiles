@@ -1,8 +1,5 @@
 [alias]
-	co = checkout
 	st = status -s -b --ignored
-	br = branch
-	aa = add --all
 	graph = log --graph --oneline --decorate --all
 [core]
 	ui = auto
