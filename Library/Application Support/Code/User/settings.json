@@ -28,5 +28,8 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Visual Studio Dark",
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "breadcrumbs.enabled": true
 }
