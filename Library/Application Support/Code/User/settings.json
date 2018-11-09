@@ -1,0 +1,11 @@
+{
+    "files.autoSave": "onWindowChange",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.smoothScrolling": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "breadcrumbs.enabled": true,
+    "search.showLineNumbers": true,
+    "search.smartCase": true
+}
