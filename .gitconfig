@@ -3,7 +3,7 @@
         email = yokomotod@gmail.com
 [alias]
 	st = status --short --branch
-	graph = log --graph --oneline --decorate
+	graph = log --graph --format='"%C(auto)%h%d %s by %an"' --decorate
 [core]
 	ui = auto
 	editor = vim
