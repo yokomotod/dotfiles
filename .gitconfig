@@ -10,6 +10,7 @@
 	autocrlf = false
 	ignorecase = false
 [pager]
+	# on ubuntu: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 	diff = diff-highlight | less -R
 	log  = diff-highlight | less -R
 	show = diff-highlight | less -R
