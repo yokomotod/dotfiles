@@ -14,6 +14,8 @@
 	diff = diff-highlight | less -R
 	log  = diff-highlight | less -R
 	show = diff-highlight | less -R
+[init]
+	defaultBranch = main
 [push]
 	autoSetupRemote = true
 [pull]
