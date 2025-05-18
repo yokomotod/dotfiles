@@ -9,6 +9,7 @@
 	editor = vim
 	autocrlf = false
 	ignorecase = false
+	quotepath = false
 [pager]
 	# on ubuntu: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 	diff = diff-highlight | less -R
