@@ -4,6 +4,14 @@
 [alias]
 	st = status --short --branch
 	graph = log --graph --format='"%C(auto)%h%d %s by %an"' --decorate
+	sw = "!f() { \
+		if [ $# -ne 1 ]; then echo 'USAGE: git sws <branch>' >&2; return 1; fi; \
+		git stash push -u -m \"sw:$(date +%s)\" && \
+		git switch $1 && \
+		git stash pop --index || { rc=$?; echo 'sw: pop failed' >&2; return $rc; }; \
+	}; f"
+
+
 [core]
 	ui = auto
 	editor = vim
