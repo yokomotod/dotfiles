@@ -15,6 +15,11 @@
 
       claude = "npm exec --offline @anthropic-ai/claude-code";
     };
+
+    initExtra = ''
+      keychain -q $HOME/.ssh/id_ed25519
+      source $HOME/.keychain/$HOSTNAME-sh
+    '';
   };
 
   home.stateVersion = "24.11";
