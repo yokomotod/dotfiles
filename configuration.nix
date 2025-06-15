@@ -10,6 +10,8 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  time.timeZone = "Asia/Tokyo";
+
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
