@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     ripgrep
+    claude-code
   ];
 
   programs.bash = {
