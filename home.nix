@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     ripgrep
-    claude-code
+    nodejs
   ];
 
   programs.bash = {
@@ -12,6 +12,8 @@
     shellAliases = {
       ll = "ls -l";
       la = "ls -la";
+
+      claude = "npm exec --offline @anthropic-ai/claude-code";
     };
   };
 
