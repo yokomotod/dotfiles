@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     ripgrep
     nodejs
+    podman
   ];
 
   programs.bash = {
