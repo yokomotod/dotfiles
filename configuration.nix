@@ -24,10 +24,17 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   environment.systemPackages = with pkgs; [
+    wget
     vim
     git
     keychain
   ];
+
+  # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.nix-ld-rs;
+  };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
     "claude-code"
