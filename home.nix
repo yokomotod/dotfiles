@@ -5,7 +5,10 @@
 
   home.packages = with pkgs; [
     ripgrep
-    nodejs
+    jq
+    nodejs_latest
+    pnpm
+    uv
     podman
   ];
 

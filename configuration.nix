@@ -28,6 +28,7 @@
     vim
     git
     keychain
+    htop
   ];
 
   # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
