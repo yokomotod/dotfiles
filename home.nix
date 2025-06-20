@@ -18,8 +18,6 @@
     shellAliases = {
       ll = "ls -l";
       la = "ls -la";
-
-      claude = "npm exec --offline @anthropic-ai/claude-code";
     };
 
     initExtra = ''
@@ -32,6 +30,14 @@
   xdg.configFile."git/ignore".source = ./.config/git/ignore;
   home.file.".local/bin/diff-highlight" = {
     source = "${pkgs.git}/share/git/contrib/diff-highlight/diff-highlight";
+    executable = true;
+  };
+
+  home.file.".local/bin/claude" = {
+    text = ''
+      #!/usr/bin/env bash
+      exec npm exec --offline @anthropic-ai/claude-code -- "$@"
+    '';
     executable = true;
   };
 
