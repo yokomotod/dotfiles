@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.npm-global/bin"
+  ];
 
   home.packages = with pkgs; [
     ripgrep
@@ -33,13 +36,10 @@
     executable = true;
   };
 
-  home.file.".local/bin/claude" = {
-    text = ''
-      #!/usr/bin/env bash
-      exec npm exec --offline @anthropic-ai/claude-code -- "$@"
-    '';
-    executable = true;
-  };
+  # https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+  home.file.".npmrc".text = ''
+    prefix=~/.npm-global
+  '';
 
   home.stateVersion = "24.11";
 }
