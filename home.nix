@@ -13,6 +13,8 @@
     pnpm
     uv
     podman
+    tenv
+    awscli2
   ];
 
   programs.bash = {
@@ -26,6 +28,8 @@
     initExtra = ''
       keychain -q $HOME/.ssh/id_ed25519
       source $HOME/.keychain/$HOSTNAME-sh
+
+      export TENV_AUTO_INSTALL=true
     '';
   };
 
