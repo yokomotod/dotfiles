@@ -11,6 +11,7 @@
     ripgrep
     jq
     nodejs_latest
+    (yarn.override { nodejs = nodejs_latest; })
     pnpm
     uv
     tenv
