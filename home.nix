@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    tree
     ripgrep
     jq
     nodejs_latest
