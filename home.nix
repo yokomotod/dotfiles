@@ -13,8 +13,6 @@
     nodejs_latest
     pnpm
     uv
-    podman
-    podman-compose
     tenv
     awscli2
   ];

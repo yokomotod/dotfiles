@@ -29,7 +29,12 @@
     git
     keychain
     htop
+    podman-compose
   ];
+
+  # Enable podman at system level to automatically set up /etc/containers/ configs
+  # (policy.json, registries.conf, etc.) instead of manually managing them in home.nix
+  virtualisation.podman.enable = true;
 
   # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
   programs.nix-ld = {
