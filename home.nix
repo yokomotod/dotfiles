@@ -13,6 +13,9 @@
     nodejs_latest
     (yarn.override { nodejs = nodejs_latest; })
     pnpm
+    python3
+    gnumake
+    gcc
     uv
     tenv
     awscli2
