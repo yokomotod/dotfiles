@@ -37,10 +37,7 @@
   virtualisation.podman.enable = true;
 
   # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
-  programs.nix-ld = {
-    enable = true;
-    package = pkgs.nix-ld-rs;
-  };
+  programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
     "claude-code"
