@@ -4,6 +4,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/.npm-global/bin"
+    "$HOME/.cargo/bin"
   ];
 
   home.packages = with pkgs; [
@@ -19,6 +20,8 @@
     uv
     tenv
     awscli2
+    rustup
+    chromium
   ];
 
   programs.bash = {
